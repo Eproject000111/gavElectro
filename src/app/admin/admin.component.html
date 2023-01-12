@@ -1,0 +1,74 @@
+<nz-layout class="app-layout">
+    <nz-sider class="menu-sidebar"
+              nzCollapsible
+              nzWidth="256px"
+              nzBreakpoint="md"
+              [(nzCollapsed)]="isCollapsed"
+              [nzTrigger]="null">
+      <div class="sidebar-logo">
+        <a href="https://ng.ant.design/" target="_blank">
+          <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
+          <h1>Admin Dashboard</h1>
+        </a>
+      </div>
+     
+      <ul nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item nzSelected [routerLink]="['/admin/dash']">
+          <span nz-icon nzType="dashboard"></span>
+          <span >Dashboard</span>
+        </li>
+        <li nz-menu-item [routerLink]="['/admin/category']">
+          <span nz-icon nzType="unordered-list"></span>
+          <span>Categories</span>
+        </li>
+        <li nz-menu-item [routerLink]="['/admin/brand']">
+          <span nz-icon nzType="unordered-list"></span>
+          <span>Brands</span>
+        </li>
+        <li nz-menu-item [routerLink]="['/admin/prod']">
+          <span nz-icon nzType="unordered-list"></span>
+          <span>Products</span>
+        </li>
+        <li nz-menu-item [routerLink]="['/admin/user']">
+          <span nz-icon nzType="unordered-list"></span>
+          <span>Users</span>
+        </li>
+        <li nz-menu-item [routerLink]="['/admin/role']" >
+          <span nz-icon nzType="unordered-list"></span>
+          <span>Roles</span>
+        </li>
+        <li nz-menu-item [routerLink]="['/admin/staticPage']" >
+          <span nz-icon nzType="setting"></span>
+          <span>Static Page</span>
+        </li>
+        <li nz-menu-item [routerLink]="['/admin/setting']" >
+          <span nz-icon nzType="setting"></span>
+          <span>Setting</span>
+        </li>
+        <!-- <li nz-menu-item>
+          <span nz-icon nzType="pie-chart"></span>
+          <span>logout</span>
+        </li> -->
+      </ul>
+    </nz-sider>
+    <nz-layout>
+      <nz-header>
+        <div class="app-header">
+          <div class="d-flex justify-content-between">
+            <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
+                <i class="trigger"
+                   nz-icon
+                   [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+                ></i>
+              </span>
+              <span class="lgo-style" [routerLink]="['/admin/login']" (click)="logout()">Logout</span>
+          </div>
+        </div>
+      </nz-header>
+      <nz-content>
+        <div class="inner-content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>

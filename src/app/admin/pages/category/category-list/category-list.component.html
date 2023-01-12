@@ -1,0 +1,78 @@
+<div class="text-end mb-2">
+    
+    <button nz-button nzType="primary" (click)="open()" ><span nz-icon nzType="plus" nzTheme="outline" class="icon"></span>Add</button>
+</div>
+
+<div class="mt-2">
+    <nz-table #expandTable [nzData]="listOfMapData" nzTableLayout="fixed">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Parent Name</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let data of expandTable.data">
+            <ng-container *ngFor="let item of mapOfExpandedData[data.key]">
+              <tr *ngIf="(item.parent && item.parent.expand) || !item.parent">
+                <td
+                  [nzIndentSize]="item.level! * 20"
+                  [nzShowExpand]="!!item.children"
+                  [(nzExpand)]="item.expand"
+                  (nzExpandChange)="collapse(mapOfExpandedData[data.key], item, $event)"
+                >
+                  {{ item.name }}
+                </td>
+                <td>{{ item.age }}</td>
+                <td>{{ item.address }}</td>
+              </tr>
+            </ng-container>
+          </ng-container>
+        </tbody>
+      </nz-table>
+</div>
+
+    <nz-drawer
+      [nzClosable]="false"
+      [nzVisible]="visible"
+      nzPlacement="right"
+      nzTitle="Add Category"
+      (nzOnClose)="close()"
+    >
+      <ng-container *nzDrawerContent>
+        <form>
+              <mat-form-field class="w-100" appearance="outline">
+                <mat-label>Name</mat-label>
+                <input type='text' matInput autocomplete="off"
+                    class="text-uppercase">
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Description</mat-label>
+              <textarea matInput placeholder="Comments"></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100" >
+                <mat-label>Parent Name</mat-label>
+                <input type="text"
+                placeholder="Parent Name"
+                matInput
+                [matAutocomplete]="auto"
+                >
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option>
+
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field> 
+
+            <div class="d-flex justify-content-center mt-4">
+              <button type="submit" mat-raised-button color="primary"
+                  style="width: 50%;height: 40px;">Proceed</button>
+          </div>
+        </form>
+      </ng-container>
+    </nz-drawer>

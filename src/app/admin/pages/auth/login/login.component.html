@@ -1,0 +1,30 @@
+<div class="container h-100 d-flex flex-column justify-content-center align-items-center">
+    <span class="admin-text mb-4">ADMIN LOGIN</span>
+    <div class="signup h-50 w-50 d-flex justify-content-center align-items-center">
+        <nz-spin nzTip="Please wait..." [nzSpinning]="loadloginScreen">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="example-form">
+            <div class="row">
+                <div class="col-lg-12">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>email</mat-label>
+                        <input matInput placeholder="email" formControlName="email">
+                    </mat-form-field>
+                    <!-- <mat-error *ngIf="submitted && loginFormControl.email.errors">
+                        required
+                    </mat-error> -->
+                </div>
+
+                <div class="col-lg-12">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label>password</mat-label>
+                        <input matInput placeholder="password" formControlName="password">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mt-4">
+                <button mat-raised-button color="primary">Login</button>
+            </div>
+        </form>
+    </nz-spin>
+    </div>
+</div>

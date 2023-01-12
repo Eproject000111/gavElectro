@@ -1,0 +1,23 @@
+.nav-data{
+    // margin-left: 38px;
+    font-size: 18px;
+    a{
+        margin-left:25px;
+        color: #2B2D42;
+    }
+    .nav-content{
+        font-weight: 500;
+    }
+
+     .nav-link.active{
+        color: red;
+     }
+}
+
+.menu-tag{
+    background: white;
+    /* width: 15%; */
+    height: 37px !important;
+    width: 68px !important;
+}
+
