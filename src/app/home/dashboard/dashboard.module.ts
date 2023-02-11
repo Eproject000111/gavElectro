@@ -6,6 +6,10 @@ import { DashboardComponent } from './dashboard.component';
 import { HeaderComponent } from './pages/header/header.component';
 import { FooterComponent } from './pages/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+// import {SharedModule} from './../../shared/shared.module';
+import { LoginComponent } from './pages/auth/login/login.component';
+import { SignupComponent } from './pages/auth/signup/signup.component';
+import {MaterialModule} from 'src/app/material.module'
 
 
 @NgModule({
@@ -13,11 +17,15 @@ import { HomeComponent } from './pages/home/home.component';
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    // SharedModule,
+    MaterialModule
   ]
 })
 export class DashboardModule { }

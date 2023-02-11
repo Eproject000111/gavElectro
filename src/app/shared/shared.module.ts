@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import {MaterialModule} from 'src/app/material.module'
 
+import { SharedRoutingModule } from './shared-routing.module';
+import {MaterialModule} from 'src/app/material.module'
 
 
 
@@ -11,8 +11,8 @@ import {MaterialModule} from 'src/app/material.module'
   ],
   imports: [
     CommonModule,
-    HttpClientModule,
+    SharedRoutingModule,
     MaterialModule
   ]
 })
-export class CoreModule { }
+export class SharedModule { }

@@ -15,6 +15,8 @@ import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { ErrorComponent } from './error/error.component'
+import {SharedModule} from './shared/shared.module'
+import {CoreModule} from './core/core.module'
 
 registerLocaleData(en);
 
@@ -34,7 +36,9 @@ registerLocaleData(en);
     NzLayoutModule,
     NzMenuModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    CoreModule
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]

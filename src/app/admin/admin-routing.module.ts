@@ -16,10 +16,13 @@ import { StaticPageComponent } from './pages/static-page/static-page.component';
 import { UserListComponent } from './pages/user/user-list/user-list.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'login' },
-  {
-    path:'login', component:LoginComponent, canActivate:[LoggingGuardGuard]
-  },
+  // { path: '', pathMatch: 'full', redirectTo: 'login' },
+  // {
+  //   path:'login', component:LoginComponent, canActivate:[LoggingGuardGuard]
+  // },
+  // {
+  //   path:'login', component:LoginComponent
+  // },
   {
     path:'', component:AdminComponent, children:[
 
