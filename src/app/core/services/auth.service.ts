@@ -27,10 +27,10 @@ export class AuthService {
   constructor(private apiService:ApiHttpService) { }
   
 login(body:any){
-  return this.apiService.post(environment.url+'auth/login',body).pipe(tap((userVal:any)=>{
-    // this._userInfo.next(userVal.data)
-    document.cookie = 'Token'+'='+userVal.data.token;
-  }));
+  // return this.apiService.post(environment.url+'auth/login',body).pipe(tap((userVal:any)=>{
+  //   // this._userInfo.next(userVal.data)
+  //   document.cookie = 'Token'+'='+userVal.data.token;
+  // }));
 }
 
 }

@@ -38,28 +38,28 @@ export class LoginComponent implements OnInit {
 
   onSubmit()
   {
-    if(this.loginForm.invalid)
-    {
-      return;
-    }    
-    this.loadloginScreen = true;
-    let bodyData = {
-      email: this.loginForm.get('email')?.value,
-      password: this.loginForm.get("password")?.value
-    }
-    this._authService.login(bodyData).subscribe((res:any)=>{
-    this.loadloginScreen = false;
-    console.log(res)
-     if(res.status == 'ssuccess')
-     {
-      this.router.navigateByUrl('admin/dash');
-     }
-    },
-    (err)=>{
-    this.loadloginScreen = false;
-    throw err;
-    }
-    )
+    // if(this.loginForm.invalid)
+    // {
+    //   return;
+    // }    
+    // this.loadloginScreen = true;
+    // let bodyData = {
+    //   email: this.loginForm.get('email')?.value,
+    //   password: this.loginForm.get("password")?.value
+    // }
+    // this._authService.login(bodyData).subscribe((res:any)=>{
+    // this.loadloginScreen = false;
+    // console.log(res)
+    //  if(res.status == 'ssuccess')
+    //  {
+    //   this.router.navigateByUrl('admin/dash');
+    //  }
+    // },
+    // (err)=>{
+    // this.loadloginScreen = false;
+    // throw err;
+    // }
+    // )
   }
   
 
